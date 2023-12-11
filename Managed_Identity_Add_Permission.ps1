@@ -34,7 +34,8 @@ Write-Host "Importing Microsoft.Graph module..."
 Import-Module Microsoft.Graph.Authentication
 
 # Connect to Microsoft Graph
-Connect-MgGraph -Scopes "Application.Read.All","AppRoleAssignment.ReadWrite.All,RoleManagement.ReadWrite.Directory"
+Connect-MgGraph -Scopes "Application.Read.All" 
+#,"AppRoleAssignment.ReadWrite.All,RoleManagement.ReadWrite.Directory"
 Write-Host "Connected to Microsoft Graph."
 
 $ManagedIdentityId = (Get-MgServicePrincipal -Filter "displayName eq '$ManagedIDEntAppName'").id
